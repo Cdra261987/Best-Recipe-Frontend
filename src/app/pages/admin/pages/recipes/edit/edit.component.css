@@ -1,0 +1,19 @@
+.edit-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.edit-form {
+    width: 50%;
+}
+
+.edit-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+}

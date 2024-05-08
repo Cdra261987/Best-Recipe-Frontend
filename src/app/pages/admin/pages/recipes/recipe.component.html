@@ -1,0 +1,110 @@
+<admin-navbar></admin-navbar>
+<div class="recipe-home">
+  <!-- List of Recipes -->
+  <div class="recipe-home-table">
+    <h1>List of Recipes</h1>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>mdo</td>
+          <td>
+            <div class="btn-actions">
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-block mb-4"
+                (click)="onEditRecipe()"
+              >
+                Edit
+              </button>
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-success btn-block mb-4"
+              >
+                Valid
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>fat</td>
+          <td>
+            <div class="btn-actions">
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-block mb-4"
+                (click)="onEditRecipe()"
+              >
+                Edit
+              </button>
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-success btn-block mb-4"
+              >
+                Valid
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>twitter</td>
+          <td>
+            <div class="btn-actions">
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-block mb-4"
+                (click)="onEditRecipe()"
+              >
+                Edit
+              </button>
+              <button
+                type="submit"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-success btn-block mb-4"
+              >
+                Valid
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center">
+      <button
+        type="submit"
+        data-mdb-button-init
+        data-mdb-ripple-init
+        class="btn btn-primary btn-block mb-4"
+      >
+        Load more
+      </button>
+    </div>
+  </div>
+</div>

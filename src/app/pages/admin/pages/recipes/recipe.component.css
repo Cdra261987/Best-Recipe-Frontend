@@ -1,0 +1,17 @@
+.recipe-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.recipe-home-table {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-actions {
+    display: flex;
+    justify-content: space-around;
+}
