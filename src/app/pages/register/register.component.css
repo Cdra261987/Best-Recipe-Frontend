@@ -1,0 +1,19 @@
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-form {
+    width: 50%;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+}

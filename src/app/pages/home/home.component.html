@@ -1,0 +1,37 @@
+<div>
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+  <div class="home-page">
+    <!-- Create new Recipe Button -->
+    <div class="section-button-recipe">
+        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 btn-recipe" (click)="onCreate()">Create a new Recipe</button>
+    </div>
+    <!-- Section of Search -->
+    <div class="section-home-search">
+      <div class="home-search-input">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by name"
+          aria-label="Username"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Filter by category</option>
+        <option value="1">Dessert</option>
+        <option value="2">Italian</option>
+        <option value="3">Portuguese</option>
+      </select>
+    </div>
+    <!-- List of Recipes -->
+    <div class="row-col-3 home-card-section" *ngIf="recipeList.length > 0; else listEmpty">
+      <app-cards *ngFor="let recipe of recipeList"></app-cards>
+    </div>
+    <ng-template #listEmpty>
+      <div class="list-empty">
+        <h1>There's no Recipe!</h1>
+      </div>
+    </ng-template>
+  </div>
+</div>

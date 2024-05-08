@@ -1,0 +1,33 @@
+<div class="register-page">
+    <form class="register-form" [formGroup]="formRegister" (ngSubmit)="onRegister()">
+
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="name" id="form2Example1" class="form-control" formControlName="name" />
+            <label class="form-label" for="form2Example1">Name</label>
+        </div>
+        
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" formControlName="email" />
+            <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+    
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" formControlName="password" />
+            <label class="form-label" for="form2Example2">Password</label>
+        </div>
+
+    
+        <!-- Submit button -->
+        <div class="register-button">
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!formRegister.valid">Register</button>
+        </div>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Already a member? <a href="/login" routerLink="/login">Login</a></p>
+        </div>
+    </form>
+</div>

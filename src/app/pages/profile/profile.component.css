@@ -1,0 +1,25 @@
+.card-profile {
+    background-color: #9de2ff;
+}
+
+.profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-form {
+    width: 50%;
+    background-color: #9de2ff;
+    padding: 20px;
+}
+
+.profile-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+}
