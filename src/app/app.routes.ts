@@ -6,6 +6,10 @@ import { ProfilePage } from './pages/profile/profile.component';
 import { RecipePageDetails } from './pages/recipes/details/recipe.component';
 import { RecipePageEdit } from './pages/recipes/edit/edit.component';
 import { authGuard } from './guards/auth.guard';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminUserComponent } from './pages/admin/pages/users/user.component';
+import { AdminRecipeComponent } from './pages/admin/pages/recipes/recipe.component';
+import { AdminRecipeEdit } from './pages/admin/pages/recipes/edit/edit.component';
 
 export const routes: Routes = [
     {
@@ -47,6 +51,33 @@ export const routes: Routes = [
             }
         ],
         //canActivate: [authGuard]
+    },
+    {
+        path: 'admin',
+        children: [
+            {
+                path: 'home',
+                component: AdminComponent
+            },
+            {
+                path: 'users',
+                component: AdminUserComponent
+            },
+            {
+                path: 'recipes',
+                children: [
+                    {
+                        path: '',
+                        component: AdminRecipeComponent,
+                    },
+                    {
+                        path: 'edit',
+                        component: AdminRecipeEdit,
+                        pathMatch: 'full'
+                    }
+                ]
+            }
+        ]
     },
     { path: '**', redirectTo: '' }, //Not found router
 ];
