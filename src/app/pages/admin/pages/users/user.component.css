@@ -1,0 +1,12 @@
+.user-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-home-table {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
