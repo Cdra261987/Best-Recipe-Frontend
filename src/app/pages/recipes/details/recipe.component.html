@@ -18,13 +18,14 @@
                 class="img-fluid my-5"
                 style="width: 130px"
               />
-              <h5>Bacalhau com Natas</h5>
+              <h5>{{recipe.name}}</h5>
+              <p>{{recipe.category}}</p>
               <!-- Ratings -->
               <app-ratings></app-ratings>
-              <p>4.1</p>
-              <p>40 minutes</p>
+              <p>{{recipe.difficulty}}</p>
+              <p>{{recipe.duration}}</p>
               <div>
-                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-block mb-4">Edit</button>
+                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-block mb-4" (click)="onEdit()">Edit</button>
               </div>
             </div>
             <div class="col-md-8">
@@ -32,20 +33,12 @@
                 <h6>Ingredients</h6>
                 <hr class="mt-0 mb-4" />
                 <div class="pt-1">
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
+                  <p *ngFor="let ingredients of recipe.ingredient">{{ingredients}}</p>
                 </div>
                 <h6>Description</h6>
                 <hr class="mt-0 mb-4" />
                 <div class="pt-1">
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
-                  <p>Lorem ipsum</p>
+                  <p>{{recipe.description}}</p>
                 </div>
               </div>
             </div>

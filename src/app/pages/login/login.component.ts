@@ -1,21 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { User } from '../../models/user';
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
+import { NotifierModule, NotifierService } from "angular-notifier";
 
 @Component({
     selector: 'login-page',
     templateUrl: './login.component.html',
     styleUrl: './login.component.css',
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule]
+    imports: [FormsModule, ReactiveFormsModule, NotifierModule]
 })
 export class LoginPage implements OnInit {
 
     public formLogin!: FormGroup;
     private user!: User;
 
-    constructor(private fb: FormBuilder, public router: Router) {}
+    constructor(private fb: FormBuilder, public router: Router, private notifierService: NotifierService) {}
 
     ngOnInit(): void {
       this.formLogin = this.fb.group({
@@ -33,7 +34,8 @@ export class LoginPage implements OnInit {
         }
         //Sendo values to Service
         //If returns of service success
-        this.router.navigate(['/home']); //Redirect to Home
+        this.notifierService.notify('sucess', 'Login was success!');
+        //this.router.navigate(['/home']); //Redirect to Home
         localStorage.setItem('user', JSON.stringify(this.user)); //Save user in localStorage
     }
 }

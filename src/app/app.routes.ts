@@ -39,7 +39,7 @@ export const routes: Routes = [
     path: 'recipe',
     children: [
       {
-        path: 'details',
+        path: 'details/:id',
         component: RecipePageDetails,
       },
       {

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppModule } from '../../app.module';
 import { Router } from '@angular/router';
+import { Recipe } from '../../models/recipe';
 
 @Component({
   selector: 'app-cards',
@@ -10,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent {
 
+  @Input() recipe!: Recipe;
+
   constructor(private router: Router) {}
 
   onDetails(): void {
-    this.router.navigate(['/recipe/details']);
+    this.router.navigate(['/recipe/details/' + this.recipe.id]);
   }
 
 }

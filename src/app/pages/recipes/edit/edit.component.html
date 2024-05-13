@@ -27,10 +27,22 @@
             <label class="form-label" for="form2Example2">Difficulty</label>
         </div>
 
+        <!-- Category input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form2Example2" class="form-control" formControlName="category" />
+            <label class="form-label" for="form2Example2">Category</label>
+        </div>
+
+        <!-- Ingredients input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form2Example2" class="form-control" formControlName="category" />
+            <label class="form-label" for="form2Example2">Ingredients</label>
+        </div>
+
     
         <!-- Submit button -->
         <div class="edit-button">
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!formRecipe.valid">Create</button>
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!formRecipe.valid">{{buttonText}}</button>
         </div>
     </form>
 </div>

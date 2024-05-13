@@ -10,23 +10,23 @@
         />
       </div>
       <div class="flex-grow-1 ms-3">
-        <h5 class="mb-1">Bacalhau com Natas</h5>
-        <p class="mb-2 pb-1" style="color: #2b2a2a">Descrição</p>
+        <h5 class="mb-1">{{recipe.name}}</h5>
+        <p class="mb-2 pb-1" style="color: #2b2a2a">{{recipe.description}}</p>
         <div
           class="d-flex justify-content-start rounded-3 p-2 mb-2"
           style="background-color: #efefef"
         >
           <div>
             <p class="small text-muted mb-1">Rating</p>
-            <p class="mb-0">41</p>
+            <p class="mb-0">{{recipe.difficulty}}</p>
           </div>
           <div class="px-3">
             <p class="small text-muted mb-1">Durantion</p>
-            <p class="mb-0">1:30</p>
+            <p class="mb-0">{{recipe.duration}}</p>
           </div>
           <div>
             <p class="small text-muted mb-1">Difficulty</p>
-            <p class="mb-0">8.5</p>
+            <p class="mb-0">{{recipe.difficulty}}</p>
           </div>
         </div>
         <div class="d-flex pt-1">
