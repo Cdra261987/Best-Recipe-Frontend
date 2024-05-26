@@ -11,6 +11,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AdminUserComponent } from './pages/admin/pages/users/user.component';
 import { AdminRecipeComponent } from './pages/admin/pages/recipes/recipe.component';
 import { AdminRecipeEdit } from './pages/admin/pages/recipes/edit/edit.component';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   {
@@ -33,7 +34,7 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: ProfilePage,
-    //canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'recipe',
@@ -55,7 +56,7 @@ export const routes: Routes = [
         component: RecipePageFavorites,
       },
     ],
-    //canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'admin',
@@ -76,13 +77,14 @@ export const routes: Routes = [
             component: AdminRecipeComponent,
           },
           {
-            path: 'edit',
+            path: 'edit/:id',
             component: AdminRecipeEdit,
             pathMatch: 'full',
           },
         ],
       },
     ],
+    canActivate: [adminGuard]
   },
   { path: '**', redirectTo: '' }, //Not found router
 ];

@@ -3,6 +3,7 @@ import { User } from "../../models/user";
 import { CommonModule } from "@angular/common";
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { NavBarComponent } from "../../components/navbar/navbar.component";
+import { ToastrService } from "ngx-toastr";
 
 type Mode = 'edit' | 'details';
 
@@ -18,7 +19,7 @@ export class ProfilePage implements OnInit {
     public modeComponent: Mode = 'details';
     public formProfile !: FormGroup;
 
-    constructor(private fb: FormBuilder) {}
+    constructor(private fb: FormBuilder, private toastrService: ToastrService) {}
 
     ngOnInit(): void {
         this.user = JSON.parse(localStorage.getItem('user') as string);
@@ -38,6 +39,8 @@ export class ProfilePage implements OnInit {
         this.user.name = this.formProfile.controls['name'].value;
 
         localStorage.setItem('user', JSON.stringify(this.user));
+
+        this.toastrService.success('Your profile information was updated!', 'Success');
 
         this.modeComponent = 'details';
     }

@@ -28,8 +28,7 @@
               "src/styles.scss",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/angular-notifier/styles/core.scss",
-              "node_modules/angular-notifier/styles/core.css"
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },

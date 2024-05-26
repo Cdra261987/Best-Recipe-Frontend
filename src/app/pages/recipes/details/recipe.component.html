@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="vh-100">
-  <div class="container py-5 h-100">
+  <div class="py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-6 mb-4 mb-lg-0">
+      <div class="col mb-4 mb-lg-0 card-body-description">
         <div class="card mb-3" style="border-radius: 0.5rem">
           <div class="row g-0">
             <div
@@ -18,35 +18,44 @@
                 class="img-fluid my-5"
                 style="width: 130px"
               />
-              <h5>{{recipe.name}}</h5>
-              <p>{{recipe.category}}</p>
+              <h5>{{ recipe.name }}</h5>
+              <p>{{ recipe.category }}</p>
               <!-- Ratings -->
               <app-ratings></app-ratings>
-              <p>{{recipe.difficulty}}</p>
-              <p>{{recipe.duration}}</p>
+              <p>{{ recipe.difficulty }}</p>
+              <p>{{ recipe.duration }}</p>
               <div>
-                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-block mb-4" (click)="onEdit()">Edit</button>
+                <button
+                  type="button"
+                  data-mdb-button-init
+                  data-mdb-ripple-init
+                  class="btn btn-secondary btn-block mb-4"
+                  (click)="onEdit()"
+                >
+                  Edit
+                </button>
               </div>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
-                <h6>Ingredients</h6>
+                <!-- <h6>Ingredients</h6>
                 <hr class="mt-0 mb-4" />
                 <div class="pt-1">
                   <p *ngFor="let ingredients of recipe.ingredient">{{ingredients}}</p>
-                </div>
+                </div> -->
                 <h6>Description</h6>
                 <hr class="mt-0 mb-4" />
-                <div class="pt-1">
-                  <p>{{recipe.description}}</p>
-                </div>
+                <div
+                  class="pt-1 recipe-description"
+                  [innerHTML]="recipe.description"
+                ></div>
               </div>
+              <!-- Comments -->
+              <app-comments></app-comments>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Comments -->
-  <app-comments></app-comments>
 </div>

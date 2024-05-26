@@ -16,3 +16,12 @@
     rgba(253, 160, 133, 1)
   );
 }
+
+.recipe-description {
+  white-space: pre-line;
+}
+
+.card-body-description {
+  margin-left: 10px;
+  margin-right: 10px;
+}

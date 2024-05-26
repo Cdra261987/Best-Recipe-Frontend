@@ -1,7 +1,7 @@
 <admin-navbar></admin-navbar>
 <div class="edit-page">
     <!-- Titulo -->
-    <form class="edit-form" [formGroup]="formRecipe" (ngSubmit)="onCreate()">
+    <form class="edit-form" [formGroup]="formRecipe" (ngSubmit)="onEdit()">
 
         <!-- Name input -->
         <div data-mdb-input-init class="form-outline mb-4">
@@ -11,7 +11,7 @@
         
         <!-- Description input -->
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" id="form2Example1" class="form-control" formControlName="description" />
+            <textarea type="text" id="form2Example1" class="form-control" formControlName="description" rows="5"></textarea>
             <label class="form-label" for="form2Example1">Description</label>
         </div>
     
@@ -27,10 +27,22 @@
             <label class="form-label" for="form2Example2">Difficulty</label>
         </div>
 
+        <!-- Category input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form2Example2" class="form-control" formControlName="category" />
+            <label class="form-label" for="form2Example2">Category</label>
+        </div>
+
+        <!-- Ingredients input -->
+        <!-- <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form2Example2" class="form-control" formControlName="category" />
+            <label class="form-label" for="form2Example2">Ingredients</label>
+        </div> -->
+
     
         <!-- Submit button -->
         <div class="edit-button">
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!formRecipe.valid">Create</button>
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!formRecipe.valid">Edit</button>
         </div>
     </form>
 </div>

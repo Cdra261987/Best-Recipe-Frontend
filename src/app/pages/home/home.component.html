@@ -3,30 +3,68 @@
   <app-navbar></app-navbar>
   <div class="home-page">
     <!-- Create new Recipe Button -->
-    <div class="section-button-recipe">
-        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 btn-recipe" (click)="onCreate()">Create a new Recipe</button>
+    <div class="section-button-recipe" [hidden]="!isUserLogged">
+      <button
+        type="button"
+        data-mdb-button-init
+        data-mdb-ripple-init
+        class="btn btn-primary btn-block mb-4 btn-recipe"
+        (click)="onCreate()"
+      >
+        Create a new Recipe
+      </button>
     </div>
     <!-- Section of Search -->
     <div class="section-home-search">
       <div class="home-search-input">
         <input
           type="text"
-          class="form-control"
+          class="form-control input-home-search"
           placeholder="Search by name"
           aria-label="Username"
           aria-describedby="addon-wrapping"
+          [(ngModel)]="searchByNameField"
         />
+        <button
+          type="button"
+          data-mdb-button-init
+          data-mdb-ripple-init
+          class="btn btn-primary btn-block mb-4 btn-recipe"
+          (click)="onSearchByName()"
+        >
+          Search
+        </button>
       </div>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Filter by category</option>
-        <option value="1">Dessert</option>
-        <option value="2">Italian</option>
-        <option value="3">Portuguese</option>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        (change)="onFilterByCategory($event)"
+        [(ngModel)]="selectedCategoryByName"
+      >
+        <option selected>{{ selectedCategoryByName }}</option>
+        <option [value]="category" *ngFor="let category of categories">
+          {{ category }}
+        </option>
       </select>
+      <button
+        type="button"
+        data-mdb-button-init
+        data-mdb-ripple-init
+        class="btn btn-primary btn-block mb-4 btn-recipe"
+        (click)="onClear()"
+      >
+        Clear
+      </button>
     </div>
     <!-- List of Recipes -->
-    <div class="home-card-section" *ngIf="recipeList.length > 0; else listEmpty">
-      <app-cards *ngFor="let recipeItem of recipeList" [recipe]="recipeItem"></app-cards>
+    <div
+      class="home-card-section"
+      *ngIf="recipeList.length > 0; else listEmpty"
+    >
+      <app-cards
+        *ngFor="let recipeItem of recipeList"
+        [recipe]="recipeItem"
+      ></app-cards>
     </div>
     <ng-template #listEmpty>
       <div class="list-empty">
